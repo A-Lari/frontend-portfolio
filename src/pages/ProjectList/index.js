@@ -1,6 +1,7 @@
 import { Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import services from "../../services";
+import Project from "../../components/Project";
 
 export default function ProjectList() {
   const [projects, setProjects] = useState([]);
@@ -19,10 +20,7 @@ export default function ProjectList() {
       <div>
         <h1>Liste projets</h1>
         {projects.map((project) => (
-          <p key={project._id}>
-            <span>{project.title}</span>
-            <span>{project.summary}</span>
-          </p>
+          <Project key={project._id} {...project }/>
         ))}
       </div>
     </>
