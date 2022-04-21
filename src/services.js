@@ -6,7 +6,7 @@ const base = axios.create({ baseURL });
 
 const services = {
   getInfos() {
-    return base.get(`/infos`).then((res) => res.data);
+    return base.get(`/sites/6261254d4c2647fc4c5f6b35`).then((res) => res.data);
   },
 };
 
