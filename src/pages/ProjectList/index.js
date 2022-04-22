@@ -18,7 +18,6 @@ export default function ProjectList() {
   }, []);
   return (
     <>
-      <Navbar />
       <div>
         <h1>Liste projets</h1>
         {projects.map((project) => (
