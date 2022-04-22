@@ -2,6 +2,7 @@ import { Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import services from "../../services";
 import Project from "../../components/Project";
+import Navbar from "../../components/Navbar";
 
 export default function ProjectList() {
   const [projects, setProjects] = useState([]);
@@ -20,7 +21,7 @@ export default function ProjectList() {
       <div>
         <h1>Liste projets</h1>
         {projects.map((project) => (
-          <Project key={project._id} {...project }/>
+          <Project key={project._id} {...project} />
         ))}
       </div>
     </>
