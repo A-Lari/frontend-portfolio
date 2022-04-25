@@ -43,6 +43,11 @@ const services = {
   getCarouselImg() {
     return base.get(`/carouselimgs`).then((res) => res.data);
   },
+
+  searchByTitle(title) {
+    console.log(title);
+    return base.get(`/projects/search/${title}`).then((res) => res.data);
+  },
 };
 
 export default services;
