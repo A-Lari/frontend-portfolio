@@ -1,8 +1,6 @@
-import { Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import services from "../../services";
 import Project from "../../components/Project";
-import Navbar from "../../components/Navbar";
 
 export default function ProjectList() {
   const [projects, setProjects] = useState([]);
