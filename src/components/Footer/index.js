@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import "./Footer.css";
 import services from "../../services";
 
-const Logo = () => {
+const Footer = () => {
   const [infos, setInfos] = useState({});
 
   useEffect(() => {
@@ -15,11 +16,10 @@ const Logo = () => {
   }, []);
 
   return (
-    <div className="logo">
-      <img className="logo-img" src={infos.logo} />
-      <h1 className="logo-title">{infos.title}</h1>
+    <div className="footer">
+      <p className="footer-content"> &copy; {infos.footer}</p>
     </div>
   );
 };
 
-export default Logo;
+export default Footer;
