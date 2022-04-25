@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
 import "./Home.css";
 import services from "../../services";
+import CarouselMain from "../../components/Carousel/CarouselMain";
 
-export default function Home() {
+import { useEffect, useState } from "react";
+
+const Home = () => {
   const [infos, setInfos] = useState({});
-
   useEffect(() => {
     services
       .getInfos()
@@ -14,13 +15,20 @@ export default function Home() {
       })
       .catch(console.log);
   }, []);
-
   return (
-    <div>
-      <p>{infos.logo}</p>
-      <p>{infos.title}</p>
-      <p>{infos.presentation_texte}</p>
-      <p>{infos.footer}</p>
+    <div className="home-body">
+      <div
+        className="body-img"
+        style={{ backgroundImage: `url(${infos.background_img})` }}
+      >
+        <div className="body-sum">
+          <h2>{infos.presentation_titre}</h2>
+          <h5>{infos.presentation_sum}</h5>
+        </div>
+      </div>
+      <CarouselMain />
     </div>
   );
-}
+};
+
+export default Home;
