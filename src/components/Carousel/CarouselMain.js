@@ -1,52 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Carousel.css";
 import Carousel from "react-bootstrap/Carousel";
+import services from "../../services";
 
 const CarouselMain = () => {
+  const [carousels, setCarousels] = useState([]);
+
+  useEffect(() => {
+    services
+      .getCarouselImg()
+      .then((response) => {
+        console.log(response);
+        setCarousels(response);
+      })
+      .catch(console.log);
+  }, []);
+
   return (
     <div className="carousel-main">
       <h4 className="carousel-title">Last Projects</h4>
       <Carousel className="carousel-div">
-        <Carousel.Item interval={3500} className="carousel-item">
-          <img
-            className="d-block w-100"
-            src="../../sophieSlide.png"
-            alt="slide One"
-          />
-          {/* <Carousel.Caption>
+        {/* <Carousel.Caption>
             <p>HTML / CSS</p>
           </Carousel.Caption> */}
-        </Carousel.Item>
-        <Carousel.Item interval={3500} className="carousel-item">
-          <img
-            className="d-block w-100"
-            src="../../guitarSlide.png"
-            alt="slide Two"
-          />
-          {/* <Carousel.Caption>
-            <p>HTML / CSS</p>
-          </Carousel.Caption> */}
-        </Carousel.Item>
-        <Carousel.Item interval={3500} className="carousel-item">
-          <img
-            className="d-block w-100"
-            src="../../toDoSlide.png"
-            alt="slide Three"
-          />
-          {/* <Carousel.Caption>
-            <p>HTML / CSS</p>
-          </Carousel.Caption> */}
-        </Carousel.Item>
-        <Carousel.Item interval={3500} className="carousel-item">
-          <img
-            className="d-block w-100"
-            src="../../blogSlide.png"
-            alt="slide Four"
-          />
-          {/* <Carousel.Caption>
-            <p>HTML / CSS</p>
-          </Carousel.Caption> */}
-        </Carousel.Item>
+        {carousels.map((carousel) => (
+          <Carousel.Item interval={3500} className="carousel-item">
+            <img
+              className="d-block w-100"
+              src={carousel.carousel_img}
+              alt="slides"
+            />
+          </Carousel.Item>
+        ))}
       </Carousel>
     </div>
   );

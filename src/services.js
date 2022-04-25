@@ -5,7 +5,6 @@ const baseURL = "http://localhost:3001";
 const base = axios.create({ baseURL });
 
 const services = {
-
   login(body) {
     // email, password
     return base.post("/auth/login", body).then((res) => res.data);
@@ -15,7 +14,7 @@ const services = {
     // email, password, confirmPassword
     return base.post("/auth/signup", body);
   },
-  
+
   getInfos() {
     return base.get(`/sites`).then((res) => res.data);
   },
@@ -41,6 +40,9 @@ const services = {
       .then((res) => res.data);
   },
 
+  getCarouselImg() {
+    return base.get(`/carouselimgs`).then((res) => res.data);
+  },
 };
 
 export default services;
