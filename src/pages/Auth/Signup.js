@@ -29,14 +29,12 @@ function SignupPage() {
     services
       .signup(body)
       .then(() => navigate("/"))
-      .catch(() => alert("ça ne s'est pas passé comme prévu"));
+      .catch(() => alert("Une erreur a eu lieu pendant l'inscription"));
   }
 
   return (
     <div>
-      <h1>S'inscrire</h1>
-      <pre>{JSON.stringify(body, null, 2)}</pre>
-
+      <h1>Inscription</h1>
       <Container>
         <Form onSubmit={handleSubmitSignup} onChange={handleFormChange} >
             <Form.Group className="mb-3" controlId="email">
