@@ -54,12 +54,20 @@ export default function CreateProject() {
             <Form.Control type="text" placeholder="Titre du projet" name="title" required/>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="technos">
+            {/*<Form.Group className="mb-3" controlId="technos">
               <Form.Label>Technos utilisées</Form.Label>
               <Form.Check type="checkbox" id="techno1" value="6264614419e1e21692e58230" name="techno1" label="HTML" />
               <Form.Check type="checkbox" id="techno2" value="6264617119e1e21692e58231" name="techno2" label="REACT" />
               <Form.Check type="checkbox" id="techno3" value="626461aa19e1e21692e58232" name="techno3" label="JAVASCRIPT" />
               <Form.Check type="checkbox" id="techno4" value="6265b646c5c7fd750bfd4eff" name="techno4" label="MERN" />
+            </Form.Group>*/}
+
+            <Form.Group className="mb-3" controlId="technos">
+              <Form.Label>Technos utilisées</Form.Label>
+              <Form.Check type="checkbox" id="techno1" value="6267e689d4cfc97249c80a18" name="techno1" label="HTML" />
+              <Form.Check type="checkbox" id="techno2" value="6267e69fd4cfc97249c80a1c" name="techno2" label="REACT" />
+              <Form.Check type="checkbox" id="techno3" value="6267e696d4cfc97249c80a1a" name="techno3" label="JAVASCRIPT" />
+              <Form.Check type="checkbox" id="techno4" value="6267e6a5d4cfc97249c80a1e" name="techno4" label="MERN" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="summary">
