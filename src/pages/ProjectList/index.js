@@ -1,4 +1,4 @@
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import services from "../../services";
 import Project from "../../components/Project";
@@ -8,16 +8,9 @@ export default function ProjectList() {
   const [projects, setProjects] = useState([]);
   const [inputTitle, setInputTitle] = useState("");
 
-  const handleSearchChange = (e) => {
-    console.log(e);
-    setInputTitle(e.target.value);
-  };
-
-  const handleSubmitSearch = (e) => {
-    e.preventDefault();
-
+  const search = (searchTitle) => {
     services
-      .searchByTitle(inputTitle)
+      .getProjects(searchTitle)
       .then((result) => {
         console.log(result);
         setProjects(result);
@@ -25,17 +18,24 @@ export default function ProjectList() {
       .catch((err) => {
         console.log(err);
       });
+  }
+
+  const handleSearchChange = (e) => {
+    setInputTitle(e.target.value);
+    if(e.target.value === "") {
+      search("");
+    }
+  };
+
+  const handleSubmitSearch = (e) => {
+    e.preventDefault();
+    search(inputTitle);
   };
 
   useEffect(() => {
-    services
-      .getProjects()
-      .then((response) => {
-        console.log(response);
-        setProjects(response);
-      })
-      .catch(console.log);
+    search("");
   }, []);
+
   return (
     <Container>
       <h2>Les projets</h2>

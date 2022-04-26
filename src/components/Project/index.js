@@ -1,8 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Badge, Card, Col } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
+import { Badge, Button, Card, Col } from 'react-bootstrap';
 import services from '../../services';
 import("./Project.css")
 

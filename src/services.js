@@ -19,8 +19,9 @@ const services = {
     return base.get(`/sites`).then((res) => res.data);
   },
 
-  getProjects() {
-    return base.get(`/projects`).then((res) => res.data);
+  getProjects(title) {
+    console.log(title);
+    return base.get(`/projects?title=${title}`).then((res) => res.data);
   },
 
   getProject(id) {
@@ -46,6 +47,9 @@ const services = {
 
   searchByTitle(title) {
     console.log(title);
+    if (title === "") {
+      title = "All";
+    }
     return base.get(`/projects/search/${title}`).then((res) => res.data);
   },
 };

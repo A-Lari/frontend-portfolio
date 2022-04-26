@@ -24,7 +24,7 @@ const CarouselMain = () => {
             <p>HTML / CSS</p>
           </Carousel.Caption> */}
         {carousels.map((carousel) => (
-          <Carousel.Item interval={3500} className="carousel-item">
+          <Carousel.Item key={carousel._id} interval={3500} className="carousel-item">
             <img
               className="d-block w-100"
               src={carousel.carousel_img}

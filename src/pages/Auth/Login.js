@@ -32,15 +32,13 @@ function LoginPage({ setConnected }) {
       })
       .catch((err) => {
         console.log(err);
-        alert("oups");
+        alert("Une erreur a eu lieu pendant le login");
       });
   }
 
   return (
     <div>
-      <h1>Login</h1>
-      <pre>{JSON.stringify(body, null, 2)}</pre>
- 
+      <h1>Login</h1> 
       <Container>
         <Form onSubmit={handleSubmitLogin} onChange={handleChangeInput} >
             <Form.Group className="mb-3" controlId="email">
