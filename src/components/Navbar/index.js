@@ -20,6 +20,7 @@ export default function NavBar({ connected, setConnected }) {
         <Link className="home-link" to="/">Home</Link>
         <Link className="project-link" to="/project">Projects</Link>
         {connected === true && <Link className="project-link" to="/project/create">Create project</Link>}
+        {connected === true && <Link className="project-link" to="/admin">Admin</Link>}
         {connected === true && <a className="project-link" href="#" onClick={disconnect}>Se déconnecter</a>}
         {connected === false && <Link className="project-link" to="/login">Se connecter</Link>}
         {connected === false && <Link className="project-link" to="/signup">S'inscrire</Link>}  

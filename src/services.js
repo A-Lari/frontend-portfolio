@@ -46,6 +46,28 @@ const services = {
     return base.get(`/carouselimgs`).then((res) => res.data);
   },
 
+  createCarousel(body) {
+    const token = localStorage.getItem("jwt");
+    return base
+      .post("/carouselimgs", body, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => res.data);
+  },
+
+  getTechnos() {
+    return base.get(`/technos`).then((res) => res.data);
+  },
+
+  createTechno(body) {
+    const token = localStorage.getItem("jwt");
+    return base
+      .post("/technos", body, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => res.data);
+  },
+
   searchByTitle(title) {
     console.log(title);
     if (title === "") {
