@@ -10,6 +10,7 @@ import CreateProject from "./pages/CreateProject";
 import SignupPage from "./pages/Auth/Signup";
 import LoginPage from "./pages/Auth/Login";
 import NavBar from "./components/Navbar";
+import Admin from "./pages/Admin";
 
 function App() {
   const [connected, setConnected] = useState(false);
@@ -37,6 +38,7 @@ function App() {
         path="/signup"
         element={<SignupPage connected={connected} />}
         />
+        <Route path="/admin" element={<Admin connected={connected} />} />
       </Routes>
       <Footer />
     </div>
